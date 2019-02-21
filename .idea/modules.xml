@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WanAndroid.iml" filepath="$PROJECT_DIR$/WanAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component_base/component_base.iml" filepath="$PROJECT_DIR$/component_base/component_base.iml" />
+      <module fileurl="file://D:\Android_studio_workplace\WanAndroid\module_wx\module_find.iml" filepath="D:\Android_studio_workplace\WanAndroid\module_wx\module_find.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_home/module_home.iml" filepath="$PROJECT_DIR$/module_home/module_home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_main/module_main.iml" filepath="$PROJECT_DIR$/module_main/module_main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_my/module_my.iml" filepath="$PROJECT_DIR$/module_my/module_my.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_project/module_project.iml" filepath="$PROJECT_DIR$/module_project/module_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_system/module_system.iml" filepath="$PROJECT_DIR$/module_system/module_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_wx/module_wx.iml" filepath="$PROJECT_DIR$/module_wx/module_wx.iml" />
+    </modules>
+  </component>
+</project>
