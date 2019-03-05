@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -140,6 +141,13 @@ public class HomeFragment extends AbsLifecycleFragment<HomeViewModel> implements
 
                     mAdapter.addData(dataBean.data.datas);
                 }
+            }
+        });
+
+        registerObserver(Constants.EVENT_KEY_HOME, Constants.HOME_TAG, HomePageArticleBean.class).observe(this, new Observer<HomePageArticleBean>() {
+            @Override
+            public void onChanged(HomePageArticleBean dataBean) {
+                Log.i("efaf",dataBean.data.curPage+"");
             }
         });
 

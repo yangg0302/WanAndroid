@@ -76,10 +76,7 @@ public class LiveBus {
         }
 
         if (!mLiveBus.containsKey(key)) {
-            mLiveBus.put(key, new LiveBusData<>(true));
-        } else {
-            LiveBusData liveBusData = mLiveBus.get(key);
-            liveBusData.isFirstSubscribe = false;
+            mLiveBus.put(key, new LiveBusData<>());
         }
 
         return (MutableLiveData<T>) mLiveBus.get(key);
@@ -109,15 +106,13 @@ public class LiveBus {
 
     public static class LiveBusData<T> extends MutableLiveData<T> {
 
-        private boolean isFirstSubscribe;
 
-        public LiveBusData(boolean isFirstSubscribe) {
-            this.isFirstSubscribe = isFirstSubscribe;
-        }
+
+
 
         @Override
         public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<T> observer) {
-            super.observe(owner, new ObserverWrapper<>(observer, isFirstSubscribe));
+            super.observe(owner, new ObserverWrapper<>(observer));
         }
     }
 
@@ -125,22 +120,34 @@ public class LiveBus {
 
         private Observer<T> observer;
 
-        private boolean isChanged;
 
-        private ObserverWrapper(Observer<T> observer, boolean isFirstSubscribe) {
+
+        private ObserverWrapper(Observer<T> observer) {
             this.observer = observer;
-            isChanged = isFirstSubscribe;
+
         }
 
         @Override
         public void onChanged(@Nullable T t) {
-            if (isChanged) {
-                if (observer != null) {
-                    observer.onChanged(t);
+            if (observer != null) {
+                if (isCallOnObserve()) {
+                    return;
                 }
-            } else {
-                isChanged = true;
+                observer.onChanged(t);
             }
+        }
+
+        private boolean isCallOnObserve() {
+            StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+            if (stackTrace != null && stackTrace.length > 0) {
+                for (StackTraceElement element : stackTrace) {
+                    if ("android.arch.lifecycle.LiveData".equals(element.getClassName()) &&
+                            "observeForever".equals(element.getMethodName())) {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
     }
@@ -163,4 +170,7 @@ public class LiveBus {
 
     }
 
+
+
 }
+

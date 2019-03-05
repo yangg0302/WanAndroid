@@ -55,6 +55,7 @@ public class SystemFragment extends AbsLifecycleFragment<SystemViewModel>{
         registerObserver(Constants.EVENT_KEY_SYSTETM, SystemBean.class).observe(this, new Observer<SystemBean>() {
             @Override
             public void onChanged(@Nullable SystemBean systemBean) {
+                normalView.finishRefresh();
                 madapter.replaceData(systemBean.data);
             }
         });
@@ -70,7 +71,7 @@ public class SystemFragment extends AbsLifecycleFragment<SystemViewModel>{
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 mViewModel.getSystemList();
-                refreshLayout.finishRefresh(1000);
+                refreshLayout.autoRefresh();
             }
         });
     }
