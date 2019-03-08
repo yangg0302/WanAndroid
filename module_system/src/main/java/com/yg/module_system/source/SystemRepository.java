@@ -25,6 +25,13 @@ public class SystemRepository extends BaseRepository<ApiService>{
                      protected void onNoNetWork() {
                          showPageState(Constants.EVENT_KEY_SYSTETM_STATE, StateConstants.NET_WORK_STATE);
                      }
+
+                     @Override
+                     protected void showLoading() {
+                         showPageState(Constants.EVENT_KEY_SYSTETM_STATE, StateConstants.LOADING_STATE);
+
+                     }
+
                      @Override
                      public void onSuccess(SystemBean bean) {
                          sendData(Constants.EVENT_KEY_SYSTETM,bean);

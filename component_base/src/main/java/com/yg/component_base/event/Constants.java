@@ -37,6 +37,9 @@ public class Constants {
     public static final Object EVENT_KEY_ACTIVITY = "EVENT_KEY_ACTIVITY";
     public static final Object EVENT_KEY_HOME_STATE = "EVENT_KEY_HOME_STATE";
 
+    public static final Object EVENT_KEY_WX = "EVENT_KEY_WX";
+    public static final Object EVENT_KEY_WX_STATE = "EVENT_KEY_WX_STATE";
+
     public static final Object EVENT_KEY_SYSTETM = "EVENT_KEY_SYSTEM";
     public static final Object EVENT_KEY_SYSTETM_STATE = "EVENT_KEY_SYSTEM_STATE";
     public static final Object EVENT_KEY_ACTIVITY_STATE = "EVENT_KEY_ACTIVITY_STATE";

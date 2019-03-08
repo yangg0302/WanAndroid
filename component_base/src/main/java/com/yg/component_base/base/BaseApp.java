@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.yg.component_base.http.HttpHelper;
 import com.yg.component_base.http.URL;
+import com.yg.component_base.utils.ClassUtils;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 
 public class BaseApp extends Application{
-    public static final String ROOT_PACKAGE = "com.yg";
+    public static final String ROOT_PACKAGE = "com.yg.module";
     private static BaseApp sInstance;
 
     private List<IApplicationDelegate> mAppDelegateList;

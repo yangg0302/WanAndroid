@@ -25,6 +25,8 @@ public abstract class AbsLifecycleActivity<T extends AbsViewModel> extends BaseA
     public void initViews(Bundle savedInstanceState) {
         mViewModel = VMProviders(this, (Class<T>) TUtil.getInstance(this, 0));
         dataObserver();
+
+
     }
 
 
@@ -48,9 +50,9 @@ public abstract class AbsLifecycleActivity<T extends AbsViewModel> extends BaseA
 
                 } else if (StateConstants.NET_WORK_STATE.equals(state)) {
 
-                } else if (StateConstants.LOADING_STATE.equals(state)) {
+                }  else if (StateConstants.SUCCESS_STATE.equals(state)) {
 
-                } else if (StateConstants.SUCCESS_STATE.equals(state)) {
+                }else if(StateConstants.LOADING_STATE.equals(state)){
 
                 }
             }

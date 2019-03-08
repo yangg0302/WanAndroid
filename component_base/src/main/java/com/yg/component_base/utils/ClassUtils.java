@@ -1,4 +1,4 @@
-package com.yg.component_base.base;
+package com.yg.component_base.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,8 +7,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.Keep;
 import android.util.Log;
-
-import com.yg.component_base.utils.Utils;
 
 import java.io.File;
 import java.io.IOException;

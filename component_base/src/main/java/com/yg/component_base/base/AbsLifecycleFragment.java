@@ -39,6 +39,7 @@ public abstract class AbsLifecycleFragment<T extends AbsViewModel> extends BaseF
             events.add(new StringBuilder((String) mStateEventKey).append(mStateEventTag).toString());
             LiveBus.getDefault().subscribe(mStateEventKey, mStateEventTag).observe(this, observer);
         }
+
     }
 
     /**
@@ -112,9 +113,9 @@ public abstract class AbsLifecycleFragment<T extends AbsViewModel> extends BaseF
 
                 } else if (StateConstants.NET_WORK_STATE.equals(state)) {
 
-                } else if (StateConstants.LOADING_STATE.equals(state)) {
-
                 } else if (StateConstants.SUCCESS_STATE.equals(state)) {
+
+                }else if (StateConstants.LOADING_STATE.equals(state)) {
 
                 }
             }

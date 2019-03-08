@@ -1,9 +1,10 @@
-package com.yg.module_home;
+package com.yg.module;
 
 import android.support.annotation.Keep;
 
 import com.yg.component_base.base.IApplicationDelegate;
 import com.yg.component_base.base.ViewManager;
+import com.yg.module_home.HomeFragment;
 
 
 /**

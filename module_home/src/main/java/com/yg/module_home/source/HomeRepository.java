@@ -24,15 +24,18 @@ public class HomeRepository extends BaseRepository<ApiService> {
               .subscribeOn(Schedulers.io())
                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new RxSubscriber<BannerBean>() {
-                    @Override
-                    protected void onNoNetWork() {
-                    }
+
                     @Override
                     public void onSuccess(BannerBean listBaseResp) {
                         sendData(Constants.EVENT_KEY_HOME,Constants.BANNER_TAG, listBaseResp);
                     }
                     @Override
                     public void onFailure(String msg) {
+                    }
+
+                    @Override
+                    protected void showLoading() {
+
                     }
                 }));
     }
@@ -51,6 +54,13 @@ public class HomeRepository extends BaseRepository<ApiService> {
                     protected void onNoNetWork() {
                         showPageState(Constants.EVENT_KEY_HOME_STATE, StateConstants.NET_WORK_STATE);
                     }
+
+                    @Override
+                    protected void showLoading() {
+
+                        showPageState(Constants.EVENT_KEY_HOME_STATE, StateConstants.LOADING_STATE);
+                    }
+
                     @Override
                     public void onSuccess(HomePageArticleBean listBaseResp) {
                         sendData(Constants.EVENT_KEY_HOME, Constants.HOME_TAG,listBaseResp);

@@ -31,7 +31,6 @@ public abstract class RxSubscriber<T> extends DisposableObserver<T> {
         showLoading();
         if (!NetworkUtils.isNetworkAvailable(BaseApp.getIns())) {
             onNoNetWork();
-            return;
         }
     }
 
@@ -40,9 +39,7 @@ public abstract class RxSubscriber<T> extends DisposableObserver<T> {
 
     }
 
-    protected void showLoading() {
 
-    }
 
     protected void onNoNetWork() {
 
@@ -86,4 +83,6 @@ public abstract class RxSubscriber<T> extends DisposableObserver<T> {
      * @param msg
      */
     public abstract void onFailure(String msg);
+
+    protected abstract void showLoading();
 }

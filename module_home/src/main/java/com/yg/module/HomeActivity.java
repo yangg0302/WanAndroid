@@ -15,6 +15,8 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends BaseActivity {
 
+
+
     @BindView(R2.id.container)
     FrameLayout container;
 
@@ -32,5 +34,7 @@ public class HomeActivity extends BaseActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.container,HomeFragment.newInstance());
         transaction.commit();
+
+
     }
 }

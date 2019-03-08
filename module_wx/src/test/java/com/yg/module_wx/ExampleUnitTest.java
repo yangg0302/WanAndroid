@@ -1,4 +1,4 @@
-package com.yg.module_find;
+package com.yg.module_wx;
 
 import org.junit.Test;
 
